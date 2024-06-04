@@ -1,7 +1,16 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["www.thestreet.com", "navi.com"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "navi.com",
+      },
+      {
+        hostname: "**",
+        pathname: "/**/*.(png|jpg|jpeg|gif|svg)",
+      },
+    ],
   },
 };
 
