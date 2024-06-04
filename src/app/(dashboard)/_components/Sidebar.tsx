@@ -8,7 +8,7 @@ const Sidebar = () => {
     <div className='w-full'>
        <div className='flex pl-8 py-[23px]'>
         <Link href="/">
-        <Image src="/next.svg" width={164.638} height={34} alt='logo'/>
+        <Image src="/next.svg" width={150} height={34} alt='logo'/>
         </Link>
        </div>
        <div className='w-full'>

@@ -1,5 +1,5 @@
 'use client'
-import chartInfo from "@/lib/chart.json"; // Adjust the import path as needed
+import chartInfo from "@/lib/chart.json";
 import { useState } from "react";
 import ReactApexChart from 'react-apexcharts';
 
@@ -27,11 +27,9 @@ interface SeriesData {
 }
 
 const Chart = () => {
-    // Provide initial state for seriesData and chartOptions
     const [seriesData , setSeriesData] = useState<SeriesData[]>(chartInfo.data || []);
     const [chartOptions , setChartOptions] = useState<ChartOptions>(chartInfo.options as ChartOptions);
 
-        // Check if chartInfo or its properties are undefined
         if (!chartInfo || !chartInfo.options || !chartInfo.data) {
             return <div>Error: Unable to load chart data.</div>;
         }

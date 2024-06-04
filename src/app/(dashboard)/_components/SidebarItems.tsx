@@ -1,7 +1,5 @@
-"use client";
 import React from "react";
 import SideItem from "./SideItem";
-import { usePathname } from "next/navigation";
 
 const guestRoutes = [
   {
@@ -12,26 +10,25 @@ const guestRoutes = [
   {
     icon: "/portfolio.svg",
     label: "Portfolio",
-    href: "/search",
+    href: "/portfolio",
   },
   {
     icon: "/market.svg",
     label: "Trading & Market",
-    href: "/search",
+    href: "/page1",
   },
   {
     icon: "/wallet.svg",
     label: "Research Portal",
-    href: "/search",
+    href: "/page2",
   },
   {
     icon: "/bank-transfer.svg",
     label: "Wallet Transfer Pay",
-    href: "/search",
+    href: "/page3",
   }
 ];
 const SidebarItems = () => {
-  const pathName = usePathname();
 
   const routes = guestRoutes;
   return (

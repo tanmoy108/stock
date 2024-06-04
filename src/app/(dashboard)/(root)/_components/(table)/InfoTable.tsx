@@ -4,14 +4,17 @@ import {
   TableBody,
   TableCaption,
   TableCell,
-  TableHead,
-  TableHeader,
   TableRow,
 } from "@/components/ui/table";
 
 const fetchInfo = async()=>{
-  const {data} = await axios.get("https://api.jsonbin.io/v3/qs/665e3c07ad19ca34f873cd56");
-  return data.record;
+  try {
+    const { data } = await axios.get("http://127.0.0.1:8000/financials");
+    return data;
+  } catch (error) {
+    console.error("Error fetching ratios:", error);
+    return {};
+  }
 }
 
 const InfoTable = async () => {
@@ -19,7 +22,7 @@ const InfoTable = async () => {
   const { news, analyst_estimates,ticker, ...filteredInfo } = info;
 
   return (
-    <div className="bg-white rounded-[25px] px-[20px] py-[24px]">
+    <div className="bg-white rounded-[8px] px-[20px] py-[24px]">
       <Table>
         <TableCaption>Key Earnings Data</TableCaption>
         <TableBody>

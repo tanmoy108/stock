@@ -17,12 +17,12 @@ const SideItem = ({icon,label,href}:propsValue) => {
     router.push(href)
    } 
   return (
-    <button type='button' className={cn("pl-8 flex items-center gap-x-3 transition-all",isActive && "bg-[#D8F1EA] " )} onClick={handleClick}>
+    <button type='button' className={cn("pl-8 flex items-center gap-x-3 transition-all",isActive && "bg-[#EFE9FF] " )} onClick={handleClick}>
        <div className='w-full flex items-center gap-x-3  py-4 text-[#84828A]'> 
-       <img className='' src={icon} alt={label} />
+       <img src={icon} alt={label} />
         {label}
        </div>
-       <div className={cn('opacity-0 border-4 border-[#17B686] h-14 transition-all',isActive && 'opacity-100')}/>
+       <div className={cn('opacity-0 border-4 border-[#6425FE] h-14 transition-all',isActive && 'opacity-100')}/>
     </button>
   )
 }

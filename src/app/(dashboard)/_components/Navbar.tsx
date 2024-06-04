@@ -1,13 +1,15 @@
 import React from 'react'
 import MobileNavbar from './MobileNavbar'
-// import NavbarButton from '@/components/navbarButton'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Navbar = () => {
   return (
     <div className='w-full flex items-center justify-between'>
         <MobileNavbar/>
-        <div>hello</div>
-        {/* <NavbarButton/> */}
+        <Link href="/">
+        <Image src={"/Ellipse.png"} alt="man face" width={40} height={40} />
+        </Link>
     </div>
   )
 }

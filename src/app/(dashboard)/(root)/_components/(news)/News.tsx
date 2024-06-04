@@ -1,19 +1,36 @@
+import axios from "axios";
+import Article from "./Article";
 
-
-const News = () => {
+export interface ArticleType {
+  sentiment: {
+    score: number;
+    value: string;
+  };
+  summary: string;
+}
+const fetchArticle = async(): Promise<{ [key: string]: ArticleType }>=>{
+    try {
+    const { data } = await axios.get("http://127.0.0.1:8000/financials");
+    return data.news;
+  } catch (error) {
+    console.error("Error fetching articles:", error);
+    return {};
+  }
+  }
+const News = async () => {
+    const info = await fetchArticle();
+    const convertToArray = Object.values(info);
   return (
     <div>
-        Recent News: Apple
-        <div className="grid grid-cols-2 mt-3">
-            <div className="bg-white px-[23px] py-[29px] rounded-[5px]">
-                <div className="text-[#212121] text-lg font-bold leading-normal mb-4">Here's what's really bothering me about the exploding Nasdaq</div>
-            <div className="flex items-center gap-2">
-                <div className="text-[#262626] text-[13px] font-normal">TechCrunch•1 hour ago</div>
-                <div className="border-[1px] border-[#E3E3E3] rounded-full px-2 py-1 font-semibold text-[13px]">
-                AAPL <span className="pl-1 underline text-[#0D8628]">+1.19%</span> 
-                </div>
-            </div>
-            </div>
+       <p className="text-[#212121] text-[18px] font-bold " > Recent News: Apple</p>
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-3 gap-3">
+           {
+            convertToArray.length>0 && convertToArray.map((item,index)=>{
+                return(
+                    <Article key={index} item={item} />
+                )
+            })
+           }
 
         </div>
     </div>

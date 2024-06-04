@@ -4,7 +4,7 @@ import Chart from "./Chart";
 const MainChartBox = () => {
   return (
     <>
-        <div className="bg-white rounded-[25px] px-[31px] py-[24px]">
+        <div className="bg-white rounded-[8px] px-[31px] py-[24px]">
           <div className="flex justify-between items-center">
             <div className="flex items-center gap-2 text-[#212121] text-lg font-semibold leading-normal">
               <svg
@@ -24,17 +24,17 @@ const MainChartBox = () => {
                 />
               </svg>
               <div className="flex flex-col">
-                Apple Inc{" "}
+                Apple Inc
                 <span className="text-[#848484] text-xs font-medium leading-normal">
                   AAPL
                 </span>
               </div>
             </div>
             <div className="text-[#212121] text-lg font-semibold leading-normal flex flex-col text-right">
-              <div>$150,70</div>
-              <span className="text-[#848484] text-[11px] font-medium leading-normal">
+              <p>$150,70</p>
+              <p className="text-[#848484] text-[11px] font-medium leading-normal">
                 Last update at 14.30
-              </span>
+              </p>
             </div>
           </div>
           <div className="mt-3">
