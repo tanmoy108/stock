@@ -2,7 +2,7 @@ This is a task Project
 
 ## STOCK MARKET LANDING PAGE
 
-<img src="/ui.png" alt="landing page ui">
+<img src="./ui.png" alt="landing page ui">
 
 # API
 - [Chart API](https://nextstockmarket.vercel.app/api/chart) = This api is used for Candlestick Chart
