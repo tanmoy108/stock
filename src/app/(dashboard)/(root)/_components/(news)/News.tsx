@@ -1,5 +1,6 @@
 import axios from "axios";
 import Article from "./Article";
+import Link from "next/link";
 
 export interface ArticleType {
   sentiment: {
@@ -27,7 +28,9 @@ const News = async () => {
            {
             convertToArray.length>0 && convertToArray.map((item,index)=>{
                 return(
-                    <Article key={index} item={item} />
+                   <Link href="/" key={index}>
+                    <Article  item={item} />
+                   </Link>
                 )
             })
            }
