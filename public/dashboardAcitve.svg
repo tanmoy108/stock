@@ -1,0 +1,26 @@
+<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="24" height="24" fill="#1E1E1E"/>
+<g id="Desktop - 1" clip-path="url(#clip0_0_1)">
+<rect width="1440" height="1126" transform="translate(-40 -181)" fill="#F5F7F9"/>
+<g id="Frame 654">
+<rect width="315" height="1126" transform="translate(-40 -181)" fill="white"/>
+<g id="Frame 1271">
+<g id="Frame 1266">
+<g id="Frame 1272">
+<rect x="-20" y="-16" width="275" height="56" rx="8" fill="#EFE9FF"/>
+<g id="Frame 1267">
+<g id="material-symbols:dashboard-outline">
+<path id="Vector" d="M13 9V3H21V9H13ZM3 13V3H11V13H3ZM13 21V11H21V21H13ZM3 21V15H11V21H3Z" fill="#6425FE"/>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_0_1">
+<rect width="1440" height="1126" fill="white" transform="translate(-40 -181)"/>
+</clipPath>
+</defs>
+</svg>
