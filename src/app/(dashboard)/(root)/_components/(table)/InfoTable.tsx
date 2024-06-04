@@ -6,11 +6,12 @@ import {
   TableCell,
   TableRow,
 } from "@/components/ui/table";
+import { BASE_URL } from "@/lib/constant";
 
 const fetchInfo = async()=>{
   try {
-    const { data } = await axios.get("http://127.0.0.1:8000/financials");
-    return data;
+    const { data } = await axios.get(`${BASE_URL}/api/info`);
+    return data.result;
   } catch (error) {
     console.error("Error fetching ratios:", error);
     return {};
@@ -18,6 +19,10 @@ const fetchInfo = async()=>{
 }
 
 const InfoTable = async () => {
+  if(!BASE_URL)
+    {
+      return null
+    }
   const info = await fetchInfo();
   const { news, analyst_estimates,ticker, ...filteredInfo } = info;
 

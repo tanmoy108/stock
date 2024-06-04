@@ -1,11 +1,12 @@
 import axios from "axios";
 import React from "react";
 import AnalystItem from "./AnalystItem";
+import { BASE_URL } from "@/lib/constant";
 
 const fetchAnalystEstimates = async () => {
   try {
-    const { data } = await axios.get("http://127.0.0.1:8000/financials");
-    return data.analyst_estimates;
+    const { data } = await axios.get(`${BASE_URL}/api/info`);
+    return data.result.analyst_estimates;
   } catch (error) {
     console.error("Error fetching articles:", error);
     return {};
@@ -13,6 +14,10 @@ const fetchAnalystEstimates = async () => {
 };
 
 const Analyst = async () => {
+    if(!BASE_URL)
+        {
+          return null
+        }
   const info = await fetchAnalystEstimates();
 
   const analystArray = Object.entries(info);

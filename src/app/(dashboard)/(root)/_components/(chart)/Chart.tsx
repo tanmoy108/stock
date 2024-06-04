@@ -52,11 +52,11 @@ const Chart = () => {
     // Fetch data from chartInfo.json and update state
     const fetchData = async () => {
       try {
-        const response = await fetch('https://api.jsonbin.io/v3/qs/665ee3b5e41b4d34e4fe48c6');
+        const response = await fetch('/api/chart');
         const data = await response.json();
-        console.log(data.record);
-        setSeriesData(data.record.data);
-        setChartOptions(data.record.options);
+        console.log(data.result);
+        setSeriesData(data.result.data);
+        setChartOptions(data.result.options);
       } catch (error) {
         console.error('Error fetching chart data:', error);
       }

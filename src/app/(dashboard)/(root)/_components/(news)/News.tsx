@@ -1,6 +1,7 @@
 import axios from "axios";
 import Article from "./Article";
 import Link from "next/link";
+import { BASE_URL } from "@/lib/constant";
 
 export interface ArticleType {
   sentiment: {
@@ -11,14 +12,18 @@ export interface ArticleType {
 }
 const fetchArticle = async(): Promise<{ [key: string]: ArticleType }>=>{
     try {
-    const { data } = await axios.get("http://127.0.0.1:8000/financials");
-    return data.news;
+    const { data } = await axios.get(`${BASE_URL}/api/info`);
+    return data.result.news;
   } catch (error) {
     console.error("Error fetching articles:", error);
     return {};
   }
   }
 const News = async () => {
+  if(!BASE_URL)
+    {
+      return null
+    }
     const info = await fetchArticle();
     const convertToArray = Object.values(info);
   return (
